@@ -1,663 +1,1146 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
+/* =========================================
+   RESET
+========================================= */
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <title>The Laureate | PCSHS News</title>
+:root {
 
-    <meta
-        name="description"
-        content="The official digital news publication of Pacita Complex Senior High School."
-    >
+    --maroon: #7b1727;
+    --maroon-dark: #4d0d18;
+    --gold: #c9a45c;
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    --black: #111111;
+    --white: #ffffff;
+    --cream: #f7f5f0;
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
-        rel="stylesheet"
-    >
+    --gray: #6f6f6f;
+    --light-gray: #e5e5e5;
 
-    <link rel="stylesheet" href="style.css">
-</head>
+}
 
-<body>
+html {
+    scroll-behavior: smooth;
+}
 
-    <!-- =====================================
-         TOP BAR
-    ====================================== -->
+body {
 
-    <div class="top-bar">
+    font-family: "DM Sans", sans-serif;
 
-        <div class="container top-content">
+    color: var(--black);
 
-            <span>
-                PACITA COMPLEX SENIOR HIGH SCHOOL
-            </span>
+    background: var(--white);
 
-            <span id="currentDate">
-                September 15, 2026
-            </span>
+    line-height: 1.6;
 
-        </div>
+}
 
-    </div>
+img {
 
+    width: 100%;
 
-    <!-- =====================================
-         HEADER
-    ====================================== -->
+    display: block;
 
-    <header class="header">
+    object-fit: cover;
 
-        <div class="container header-content">
+}
 
-            <div class="brand">
+a {
 
-                <div class="brand-mark">
-                    TL
-                </div>
+    color: inherit;
 
-                <div>
+    text-decoration: none;
 
-                    <h1>
-                        THE LAUREATE
-                    </h1>
+}
 
-                    <p>
-                        The Official Student Publication
-                    </p>
+.container {
 
-                </div>
+    width: min(1200px, 92%);
 
-            </div>
+    margin: auto;
 
+}
 
-            <button
-                class="menu-button"
-                id="menuButton"
-                aria-label="Open navigation"
-            >
-                ☰
-            </button>
 
-        </div>
+/* =========================================
+   TOP BAR
+========================================= */
 
-    </header>
+.top-bar {
 
+    background: var(--maroon-dark);
 
-    <!-- =====================================
-         NAVIGATION
-    ====================================== -->
+    color: white;
 
-    <nav class="navigation" id="navigation">
+    font-size: 10px;
 
-        <div class="container nav-content">
+    letter-spacing: 1.5px;
 
-            <a href="#home">
-                Home
-            </a>
+}
 
-            <a href="#news">
-                News
-            </a>
+.top-content {
 
-            <a href="#campus">
-                Campus
-            </a>
+    display: flex;
 
-            <a href="#features">
-                Features
-            </a>
+    justify-content: space-between;
 
-            <a href="#opinion">
-                Opinion
-            </a>
+    padding: 9px 0;
 
-            <a href="#sports">
-                Sports
-            </a>
+}
 
-            <a href="#culture">
-                Culture & Arts
-            </a>
 
-            <a href="#about">
-                About
-            </a>
+/* =========================================
+   HEADER
+========================================= */
 
-        </div>
+.header {
 
-    </nav>
+    border-bottom: 1px solid var(--light-gray);
 
+    background: white;
 
-    <!-- =====================================
-         BREAKING NEWS
-    ====================================== -->
+}
 
-    <div class="breaking">
+.header-content {
 
-        <div class="container breaking-content">
+    min-height: 110px;
 
-            <span class="breaking-label">
-                LATEST
-            </span>
+    display: flex;
 
-            <div class="breaking-text">
-                PCSHS community continues to celebrate
-                excellence, leadership, and student achievement.
-            </div>
+    align-items: center;
 
-        </div>
+    justify-content: space-between;
 
-    </div>
+}
 
+.brand {
 
-    <main id="home">
+    display: flex;
 
+    align-items: center;
 
-        <!-- =====================================
-             HERO
-        ====================================== -->
+    gap: 15px;
 
-        <section class="hero">
+}
 
-            <div class="container hero-grid">
+.brand-mark {
 
-                <article class="hero-story">
+    width: 55px;
 
-                    <div class="hero-image">
+    height: 55px;
 
-                        <img
-                            src="assets/news1.jpg"
-                            alt="Students participating in a school activity"
-                        >
+    display: flex;
 
-                        <span class="category">
-                            CAMPUS NEWS
-                        </span>
+    align-items: center;
 
-                    </div>
+    justify-content: center;
 
-                    <div class="hero-content">
+    background: var(--maroon);
 
-                        <span class="article-date">
-                            SEPTEMBER 15, 2026
-                        </span>
+    color: white;
 
-                        <h2>
-                            PCSHS Students Lead New Chapter
-                            of Campus Excellence
-                        </h2>
+    font-family: "Playfair Display", serif;
 
-                        <p>
-                            Students and school organizations continue
-                            to strengthen the campus community through
-                            leadership, service, and meaningful initiatives.
-                        </p>
+    font-size: 22px;
 
-                        <a href="#" class="read-more">
-                            READ FULL STORY →
-                        </a>
+    font-weight: 700;
 
-                    </div>
+}
 
-                </article>
+.brand h1 {
 
+    font-family: "Playfair Display", serif;
 
-                <!-- SIDE STORIES -->
+    font-size: 34px;
 
-                <aside class="side-stories">
+    line-height: 1;
 
-                    <article class="side-story">
+    letter-spacing: 1px;
 
-                        <img
-                            src="assets/news2.jpg"
-                            alt="School event"
-                        >
+}
 
-                        <div>
+.brand p {
 
-                            <span class="category">
-                                SCHOOL LIFE
-                            </span>
+    color: var(--gray);
 
-                            <h3>
-                                School community gathers
-                                for another successful activity
-                            </h3>
+    font-size: 10px;
 
-                            <span class="article-date">
-                                SEPTEMBER 14, 2026
-                            </span>
+    letter-spacing: 2px;
 
-                        </div>
+    margin-top: 5px;
 
-                    </article>
+}
 
+.menu-button {
 
-                    <article class="side-story">
+    display: none;
 
-                        <img
-                            src="assets/news3.jpg"
-                            alt="Students receiving recognition"
-                        >
+}
 
-                        <div>
 
-                            <span class="category">
-                                ACHIEVEMENT
-                            </span>
+/* =========================================
+   NAVIGATION
+========================================= */
 
-                            <h3>
-                                Young Pikashians earn recognition
-                                for outstanding performance
-                            </h3>
+.navigation {
 
-                            <span class="article-date">
-                                SEPTEMBER 12, 2026
-                            </span>
+    border-bottom: 1px solid var(--light-gray);
 
-                        </div>
+    background: white;
 
-                    </article>
+}
 
+.nav-content {
 
-                    <article class="side-story">
+    display: flex;
 
-                        <img
-                            src="assets/news4.jpg"
-                            alt="School organization"
-                        >
+    align-items: center;
 
-                        <div>
+    justify-content: center;
 
-                            <span class="category">
-                                STUDENT VOICE
-                            </span>
+    gap: 35px;
 
-                            <h3>
-                                Student leaders push for
-                                stronger campus engagement
-                            </h3>
+}
 
-                            <span class="article-date">
-                                SEPTEMBER 10, 2026
-                            </span>
+.nav-content a {
 
-                        </div>
+    padding: 15px 0;
 
-                    </article>
+    font-size: 12px;
 
-                </aside>
+    font-weight: 600;
 
-            </div>
+    position: relative;
 
-        </section>
+}
 
+.nav-content a::after {
 
-        <!-- =====================================
-             LATEST NEWS
-        ====================================== -->
+    content: "";
 
-        <section class="section" id="news">
+    position: absolute;
 
-            <div class="container">
+    bottom: 0;
 
-                <div class="section-header">
+    left: 0;
 
-                    <div>
+    width: 0;
 
-                        <span class="section-label">
-                            THE NEWSROOM
-                        </span>
+    height: 2px;
 
-                        <h2>
-                            Latest Stories
-                        </h2>
+    background: var(--maroon);
 
-                    </div>
+    transition: .3s;
 
-                    <a href="#">
-                        VIEW ALL →
-                    </a>
+}
 
-                </div>
+.nav-content a:hover::after {
 
+    width: 100%;
 
-                <div class="news-grid">
+}
 
-                    <article class="news-card">
 
-                        <img
-                            src="assets/news5.jpg"
-                            alt="Students in school"
-                        >
+/* =========================================
+   BREAKING
+========================================= */
 
-                        <div class="news-card-content">
+.breaking {
 
-                            <span class="category">
-                                CAMPUS
-                            </span>
+    background: var(--cream);
 
-                            <h3>
-                                Building a stronger
-                                and more connected campus
-                            </h3>
+    border-bottom: 1px solid var(--light-gray);
 
-                            <p>
-                                A look at the latest initiatives
-                                shaping student life at PCSHS.
-                            </p>
+}
 
-                            <span class="article-date">
-                                SEPTEMBER 9, 2026
-                            </span>
+.breaking-content {
 
-                        </div>
+    display: flex;
 
-                    </article>
+    align-items: center;
 
+    gap: 20px;
 
-                    <article class="news-card">
+    min-height: 45px;
 
-                        <img
-                            src="assets/news6.jpg"
-                            alt="School activity"
-                        >
+}
 
-                        <div class="news-card-content">
+.breaking-label {
 
-                            <span class="category">
-                                COMMUNITY
-                            </span>
+    background: var(--maroon);
 
-                            <h3>
-                                Students turn ideas into
-                                meaningful community action
-                            </h3>
+    color: white;
 
-                            <p>
-                                Student-led programs continue to
-                                create opportunities for service.
-                            </p>
+    padding: 5px 10px;
 
-                            <span class="article-date">
-                                SEPTEMBER 8, 2026
-                            </span>
+    font-size: 9px;
 
-                        </div>
+    font-weight: 700;
 
-                    </article>
+    letter-spacing: 1px;
 
+}
 
-                    <article class="news-card">
+.breaking-text {
 
-                        <div class="placeholder-image">
-                            TL
-                        </div>
+    font-size: 12px;
 
-                        <div class="news-card-content">
+    color: #444;
 
-                            <span class="category">
-                                EDUCATION
-                            </span>
+}
 
-                            <h3>
-                                Preparing today's learners
-                                for tomorrow's challenges
-                            </h3>
 
-                            <p>
-                                Students explore new opportunities
-                                for growth and academic excellence.
-                            </p>
+/* =========================================
+   HERO
+========================================= */
 
-                            <span class="article-date">
-                                SEPTEMBER 6, 2026
-                            </span>
+.hero {
 
-                        </div>
+    padding: 55px 0;
 
-                    </article>
+}
 
-                </div>
+.hero-grid {
 
-            </div>
+    display: grid;
 
-        </section>
+    grid-template-columns: 1.6fr 1fr;
 
+    gap: 40px;
 
-        <!-- =====================================
-             FEATURE
-        ====================================== -->
+}
 
-        <section class="feature-section" id="features">
+.hero-story {
 
-            <div class="container feature-grid">
+    border-bottom: 1px solid var(--light-gray);
 
-                <div class="feature-image">
+}
 
-                    <img
-                        src="assets/news1.jpg"
-                        alt="Featured school story"
-                    >
+.hero-image {
 
-                </div>
+    height: 450px;
 
-                <div class="feature-content">
+    position: relative;
 
-                    <span class="section-label">
-                        SPECIAL REPORT
-                    </span>
+}
 
-                    <h2>
-                        The Students Behind
-                        the Stories
-                    </h2>
+.hero-image img {
 
-                    <p>
-                        Journalism is more than reporting events.
-                        It is about listening to the community,
-                        asking meaningful questions, and telling
-                        stories that deserve to be heard.
-                    </p>
+    height: 100%;
 
-                    <p>
-                        Meet the student journalists who document
-                        the people, achievements, challenges, and
-                        moments that define the PCSHS community.
-                    </p>
+}
 
-                    <a href="#" class="dark-button">
-                        EXPLORE THE STORY
-                    </a>
+.category {
 
-                </div>
+    color: var(--maroon);
 
-            </div>
+    font-size: 9px;
 
-        </section>
+    font-weight: 700;
 
+    letter-spacing: 2px;
 
-        <!-- =====================================
-             CATEGORIES
-        ====================================== -->
+}
 
-        <section class="section" id="campus">
+.hero-image .category {
 
-            <div class="container">
+    position: absolute;
 
-                <div class="section-header">
+    bottom: 15px;
 
-                    <div>
+    left: 15px;
 
-                        <span class="section-label">
-                            EXPLORE
-                        </span>
+    background: white;
 
-                        <h2>
-                            More From The Laureate
-                        </h2>
+    padding: 7px 10px;
 
-                    </div>
+}
 
-                </div>
+.hero-content {
 
+    padding: 25px 0 30px;
 
-                <div class="category-grid">
+}
 
-                    <a href="#" class="category-card">
-                        <span>01</span>
-                        <h3>Campus News</h3>
-                        <p>What's happening around PCSHS.</p>
-                    </a>
+.article-date {
 
-                    <a href="#" class="category-card">
-                        <span>02</span>
-                        <h3>Features</h3>
-                        <p>Stories about the people behind our community.</p>
-                    </a>
+    display: block;
 
-                    <a href="#" class="category-card">
-                        <span>03</span>
-                        <h3>Opinion</h3>
-                        <p>Voices and perspectives from our students.</p>
-                    </a>
+    color: var(--gray);
 
-                    <a href="#" class="category-card">
-                        <span>04</span>
-                        <h3>Sports</h3>
-                        <p>Competition, athletes, and school spirit.</p>
-                    </a>
+    font-size: 9px;
 
-                </div>
+    letter-spacing: 1.5px;
 
-            </div>
+    margin-top: 10px;
 
-        </section>
+}
 
+.hero-content h2 {
 
-        <!-- =====================================
-             NEWSLETTER
-        ====================================== -->
+    font-family: "Playfair Display", serif;
 
-        <section class="newsletter">
+    font-size: clamp(35px, 4vw, 55px);
 
-            <div class="container newsletter-content">
+    line-height: 1.05;
 
-                <div>
+    margin: 12px 0 18px;
 
-                    <span class="section-label">
-                        STAY INFORMED
-                    </span>
+}
 
-                    <h2>
-                        Never miss a story.
-                    </h2>
+.hero-content p {
 
-                    <p>
-                        Follow The Laureate for the latest
-                        news and stories from PCSHS.
-                    </p>
+    max-width: 650px;
 
-                </div>
+    color: var(--gray);
 
-                <form id="newsletterForm">
+    font-size: 15px;
 
-                    <input
-                        type="email"
-                        placeholder="Your email address"
-                        required
-                    >
+}
 
-                    <button type="submit">
-                        SUBSCRIBE
-                    </button>
+.read-more {
 
-                </form>
+    display: inline-block;
 
-            </div>
+    margin-top: 20px;
 
-        </section>
+    color: var(--maroon);
 
+    font-size: 10px;
 
-    </main>
+    font-weight: 700;
 
+    letter-spacing: 1.5px;
 
-    <!-- =====================================
-         FOOTER
-    ====================================== -->
+}
 
-    <footer id="about">
 
-        <div class="container footer-grid">
+/* =========================================
+   SIDE STORIES
+========================================= */
 
-            <div class="footer-brand">
+.side-stories {
 
-                <h2>
-                    THE LAUREATE
-                </h2>
+    display: flex;
 
-                <p>
-                    The official student publication of
-                    Pacita Complex Senior High School.
-                </p>
+    flex-direction: column;
 
-            </div>
+    gap: 25px;
 
+}
 
-            <div>
+.side-story {
 
-                <h3>
-                    SECTIONS
-                </h3>
+    display: grid;
 
-                <a href="#news">News</a>
-                <a href="#campus">Campus</a>
-                <a href="#features">Features</a>
-                <a href="#opinion">Opinion</a>
+    grid-template-columns: 140px 1fr;
 
-            </div>
+    gap: 18px;
 
+    padding-bottom: 25px;
 
-            <div>
+    border-bottom: 1px solid var(--light-gray);
 
-                <h3>
-                    CONNECT
-                </h3>
+}
 
-                <a href="#">Facebook</a>
-                <a href="#">Instagram</a>
-                <a href="#">Email</a>
+.side-story img {
 
-            </div>
+    height: 110px;
 
-        </div>
+}
 
+.side-story h3 {
 
-        <div class="container footer-bottom">
+    font-family: "Playfair Display", serif;
 
-            <span>
-                © 2026 The Laureate — PCSHS
-            </span>
+    font-size: 19px;
 
-            <span>
-                Puso ang Gabay sa Gawa.
-            </span>
+    line-height: 1.2;
 
-        </div>
+    margin-top: 7px;
 
-    </footer>
+}
 
 
-    <script src="script.js"></script>
+/* =========================================
+   SECTIONS
+========================================= */
 
-</body>
-</html>
+.section {
+
+    padding: 80px 0;
+
+}
+
+.section-header {
+
+    display: flex;
+
+    align-items: end;
+
+    justify-content: space-between;
+
+    border-bottom: 2px solid var(--black);
+
+    padding-bottom: 15px;
+
+    margin-bottom: 35px;
+
+}
+
+.section-label {
+
+    color: var(--maroon);
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+}
+
+.section-header h2 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 40px;
+
+    line-height: 1.1;
+
+    margin-top: 7px;
+
+}
+
+.section-header > a {
+
+    color: var(--maroon);
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+}
+
+
+/* =========================================
+   NEWS CARDS
+========================================= */
+
+.news-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 30px;
+
+}
+
+.news-card {
+
+    border-bottom: 1px solid var(--light-gray);
+
+}
+
+.news-card img,
+.placeholder-image {
+
+    height: 220px;
+
+}
+
+.placeholder-image {
+
+    background: var(--maroon);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: white;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 50px;
+
+}
+
+.news-card-content {
+
+    padding: 20px 0 25px;
+
+}
+
+.news-card h3 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 24px;
+
+    line-height: 1.2;
+
+    margin: 8px 0 10px;
+
+}
+
+.news-card p {
+
+    color: var(--gray);
+
+    font-size: 13px;
+
+}
+
+
+/* =========================================
+   FEATURE
+========================================= */
+
+.feature-section {
+
+    background: var(--cream);
+
+    padding: 100px 0;
+
+}
+
+.feature-grid {
+
+    display: grid;
+
+    grid-template-columns: 1.2fr 1fr;
+
+    gap: 70px;
+
+    align-items: center;
+
+}
+
+.feature-image img {
+
+    height: 500px;
+
+}
+
+.feature-content h2 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(40px, 5vw, 65px);
+
+    line-height: 1.05;
+
+    margin: 15px 0 25px;
+
+}
+
+.feature-content p {
+
+    color: var(--gray);
+
+    font-size: 15px;
+
+    margin-bottom: 15px;
+
+}
+
+.dark-button {
+
+    display: inline-block;
+
+    margin-top: 15px;
+
+    background: var(--maroon);
+
+    color: white;
+
+    padding: 14px 22px;
+
+    font-size: 9px;
+
+    letter-spacing: 1.5px;
+
+    font-weight: 700;
+
+}
+
+
+/* =========================================
+   CATEGORY GRID
+========================================= */
+
+.category-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    border-top: 1px solid var(--black);
+
+    border-left: 1px solid var(--black);
+
+}
+
+.category-card {
+
+    min-height: 220px;
+
+    padding: 30px;
+
+    border-right: 1px solid var(--black);
+
+    border-bottom: 1px solid var(--black);
+
+    transition: .3s;
+
+}
+
+.category-card:hover {
+
+    background: var(--maroon);
+
+    color: white;
+
+}
+
+.category-card span {
+
+    font-size: 10px;
+
+    color: var(--gold);
+
+}
+
+.category-card h3 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 27px;
+
+    margin: 35px 0 10px;
+
+}
+
+.category-card p {
+
+    color: var(--gray);
+
+    font-size: 12px;
+
+}
+
+.category-card:hover p {
+
+    color: #ddd;
+
+}
+
+
+/* =========================================
+   NEWSLETTER
+========================================= */
+
+.newsletter {
+
+    background: var(--maroon-dark);
+
+    color: white;
+
+    padding: 70px 0;
+
+}
+
+.newsletter-content {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 50px;
+
+}
+
+.newsletter .section-label {
+
+    color: var(--gold);
+
+}
+
+.newsletter h2 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 45px;
+
+    margin: 8px 0;
+
+}
+
+.newsletter p {
+
+    color: #cfcfcf;
+
+    font-size: 13px;
+
+}
+
+.newsletter form {
+
+    display: flex;
+
+    min-width: 400px;
+
+}
+
+.newsletter input {
+
+    flex: 1;
+
+    border: none;
+
+    padding: 15px;
+
+    font-family: inherit;
+
+    outline: none;
+
+}
+
+.newsletter button {
+
+    border: none;
+
+    background: var(--gold);
+
+    color: white;
+
+    padding: 0 20px;
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+
+    background: #111;
+
+    color: white;
+
+    padding: 65px 0 20px;
+
+}
+
+.footer-grid {
+
+    display: grid;
+
+    grid-template-columns: 2fr 1fr 1fr;
+
+    gap: 70px;
+
+    padding-bottom: 50px;
+
+}
+
+.footer-brand h2 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 30px;
+
+}
+
+.footer-brand p {
+
+    max-width: 350px;
+
+    color: #999;
+
+    font-size: 13px;
+
+    margin-top: 12px;
+
+}
+
+.footer-grid h3 {
+
+    color: var(--gold);
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 18px;
+
+}
+
+.footer-grid a {
+
+    display: block;
+
+    color: #aaa;
+
+    font-size: 12px;
+
+    margin-bottom: 10px;
+
+}
+
+.footer-grid a:hover {
+
+    color: white;
+
+}
+
+.footer-bottom {
+
+    border-top: 1px solid #333;
+
+    padding-top: 20px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    color: #777;
+
+    font-size: 10px;
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 850px) {
+
+    .top-content {
+
+        display: none;
+
+    }
+
+    .header-content {
+
+        min-height: 80px;
+
+    }
+
+    .brand h1 {
+
+        font-size: 25px;
+
+    }
+
+    .brand-mark {
+
+        width: 45px;
+
+        height: 45px;
+
+    }
+
+    .menu-button {
+
+        display: block;
+
+        background: none;
+
+        border: none;
+
+        font-size: 25px;
+
+        cursor: pointer;
+
+    }
+
+    .navigation {
+
+        display: none;
+
+    }
+
+    .navigation.active {
+
+        display: block;
+
+    }
+
+    .nav-content {
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 0;
+
+    }
+
+    .nav-content a {
+
+        padding: 12px 0;
+
+        border-bottom: 1px solid var(--light-gray);
+
+    }
+
+    .hero-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .hero-image {
+
+        height: 350px;
+
+    }
+
+    .news-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .feature-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+
+    }
+
+    .feature-image img {
+
+        height: 350px;
+
+    }
+
+    .category-grid {
+
+        grid-template-columns: 1fr 1fr;
+
+    }
+
+    .newsletter-content {
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+    }
+
+    .newsletter form {
+
+        min-width: 0;
+
+    }
+
+    .footer-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+
+    }
+
+    .footer-bottom {
+
+        flex-direction: column;
+
+        gap: 10px;
+
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    .hero-content h2 {
+
+        font-size: 38px;
+
+    }
+
+    .section-header h2 {
+
+        font-size: 32px;
+
+    }
+
+    .section-header {
+
+        align-items: start;
+
+        flex-direction: column;
+
+        gap: 15px;
+
+    }
+
+    .side-story {
+
+        grid-template-columns: 100px 1fr;
+
+    }
+
+    .side-story img {
+
+        height: 90px;
+
+    }
+
+    .side-story h3 {
+
+        font-size: 16px;
+
+    }
+
+    .category-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .newsletter form {
+
+        flex-direction: column;
+
+    }
+
+    .newsletter input {
+
+        min-height: 45px;
+
+    }
+
+    .newsletter button {
+
+        min-height: 45px;
+
+    }
+
+}
