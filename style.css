@@ -1,6 +1,12 @@
-/* =========================================
+/* ==================================================
+   UPFRONT
+   DIGITAL NEWS PUBLICATION
+================================================== */
+
+
+/* ==================================================
    RESET
-========================================= */
+================================================== */
 
 * {
     margin: 0;
@@ -8,20 +14,37 @@
     box-sizing: border-box;
 }
 
+
+/* ==================================================
+   VARIABLES
+================================================== */
+
 :root {
 
-    --maroon: #7b1727;
-    --maroon-dark: #4d0d18;
-    --gold: #c9a45c;
+    --green: #176B3A;
+
+    --green-dark: #0D4726;
+
+    --green-light: #EAF4EE;
+
+    --orange: #E8751A;
+
+    --orange-light: #FFF1E6;
 
     --black: #111111;
-    --white: #ffffff;
-    --cream: #f7f5f0;
 
-    --gray: #6f6f6f;
-    --light-gray: #e5e5e5;
+    --white: #FFFFFF;
+
+    --gray: #6F6F6F;
+
+    --light-gray: #E3E3E3;
 
 }
+
+
+/* ==================================================
+   BASE
+================================================== */
 
 html {
     scroll-behavior: smooth;
@@ -57,6 +80,13 @@ a {
 
 }
 
+button,
+input {
+
+    font-family: inherit;
+
+}
+
 .container {
 
     width: min(1200px, 92%);
@@ -66,15 +96,15 @@ a {
 }
 
 
-/* =========================================
+/* ==================================================
    TOP BAR
-========================================= */
+================================================== */
 
 .top-bar {
 
-    background: var(--maroon-dark);
+    background: var(--green-dark);
 
-    color: white;
+    color: var(--white);
 
     font-size: 10px;
 
@@ -88,20 +118,22 @@ a {
 
     justify-content: space-between;
 
+    align-items: center;
+
     padding: 9px 0;
 
 }
 
 
-/* =========================================
+/* ==================================================
    HEADER
-========================================= */
+================================================== */
 
 .header {
 
-    border-bottom: 1px solid var(--light-gray);
+    background: var(--white);
 
-    background: white;
+    border-bottom: 1px solid var(--light-gray);
 
 }
 
@@ -139,9 +171,9 @@ a {
 
     justify-content: center;
 
-    background: var(--maroon);
+    background: var(--green);
 
-    color: white;
+    color: var(--white);
 
     font-family: "Playfair Display", serif;
 
@@ -149,29 +181,31 @@ a {
 
     font-weight: 700;
 
+    border-bottom: 5px solid var(--orange);
+
 }
 
-.brand h1 {
+.brand-text h1 {
 
     font-family: "Playfair Display", serif;
 
-    font-size: 34px;
+    font-size: 36px;
 
     line-height: 1;
 
-    letter-spacing: 1px;
+    letter-spacing: 2px;
 
 }
 
-.brand p {
+.brand-text p {
 
     color: var(--gray);
 
-    font-size: 10px;
+    font-size: 9px;
 
     letter-spacing: 2px;
 
-    margin-top: 5px;
+    margin-top: 6px;
 
 }
 
@@ -179,18 +213,26 @@ a {
 
     display: none;
 
+    background: none;
+
+    border: none;
+
+    font-size: 25px;
+
+    cursor: pointer;
+
 }
 
 
-/* =========================================
+/* ==================================================
    NAVIGATION
-========================================= */
+================================================== */
 
 .navigation {
 
-    border-bottom: 1px solid var(--light-gray);
+    background: var(--white);
 
-    background: white;
+    border-bottom: 1px solid var(--light-gray);
 
 }
 
@@ -198,9 +240,9 @@ a {
 
     display: flex;
 
-    align-items: center;
-
     justify-content: center;
+
+    align-items: center;
 
     gap: 35px;
 
@@ -208,13 +250,15 @@ a {
 
 .nav-content a {
 
+    position: relative;
+
     padding: 15px 0;
 
-    font-size: 12px;
+    font-size: 11px;
 
     font-weight: 600;
 
-    position: relative;
+    letter-spacing: .5px;
 
 }
 
@@ -232,7 +276,7 @@ a {
 
     height: 2px;
 
-    background: var(--maroon);
+    background: var(--orange);
 
     transition: .3s;
 
@@ -245,13 +289,13 @@ a {
 }
 
 
-/* =========================================
-   BREAKING
-========================================= */
+/* ==================================================
+   BREAKING NEWS
+================================================== */
 
 .breaking {
 
-    background: var(--cream);
+    background: var(--green-light);
 
     border-bottom: 1px solid var(--light-gray);
 
@@ -259,23 +303,23 @@ a {
 
 .breaking-content {
 
+    min-height: 45px;
+
     display: flex;
 
     align-items: center;
 
     gap: 20px;
 
-    min-height: 45px;
-
 }
 
 .breaking-label {
 
-    background: var(--maroon);
+    background: var(--orange);
 
-    color: white;
+    color: var(--white);
 
-    padding: 5px 10px;
+    padding: 6px 11px;
 
     font-size: 9px;
 
@@ -287,16 +331,16 @@ a {
 
 .breaking-text {
 
-    font-size: 12px;
-
     color: #444;
+
+    font-size: 12px;
 
 }
 
 
-/* =========================================
+/* ==================================================
    HERO
-========================================= */
+================================================== */
 
 .hero {
 
@@ -326,27 +370,25 @@ a {
 
     position: relative;
 
+    overflow: hidden;
+
 }
 
 .hero-image img {
 
     height: 100%;
 
-}
-
-.category {
-
-    color: var(--maroon);
-
-    font-size: 9px;
-
-    font-weight: 700;
-
-    letter-spacing: 2px;
+    transition: transform .5s ease;
 
 }
 
-.hero-image .category {
+.hero-image:hover img {
+
+    transform: scale(1.03);
+
+}
+
+.hero-category {
 
     position: absolute;
 
@@ -354,9 +396,21 @@ a {
 
     left: 15px;
 
-    background: white;
+    background: var(--white);
 
     padding: 7px 10px;
+
+}
+
+.category {
+
+    color: var(--green);
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
 
 }
 
@@ -408,7 +462,7 @@ a {
 
     margin-top: 20px;
 
-    color: var(--maroon);
+    color: var(--orange);
 
     font-size: 10px;
 
@@ -416,12 +470,20 @@ a {
 
     letter-spacing: 1.5px;
 
+    transition: .3s;
+
+}
+
+.read-more:hover {
+
+    color: var(--green);
+
 }
 
 
-/* =========================================
+/* ==================================================
    SIDE STORIES
-========================================= */
+================================================== */
 
 .side-stories {
 
@@ -466,9 +528,9 @@ a {
 }
 
 
-/* =========================================
-   SECTIONS
-========================================= */
+/* ==================================================
+   GENERAL SECTION
+================================================== */
 
 .section {
 
@@ -494,7 +556,7 @@ a {
 
 .section-label {
 
-    color: var(--maroon);
+    color: var(--green);
 
     font-size: 9px;
 
@@ -518,7 +580,7 @@ a {
 
 .section-header > a {
 
-    color: var(--maroon);
+    color: var(--orange);
 
     font-size: 9px;
 
@@ -529,9 +591,9 @@ a {
 }
 
 
-/* =========================================
-   NEWS CARDS
-========================================= */
+/* ==================================================
+   NEWS GRID
+================================================== */
 
 .news-grid {
 
@@ -547,18 +609,32 @@ a {
 
     border-bottom: 1px solid var(--light-gray);
 
+    overflow: hidden;
+
 }
 
-.news-card img,
+.news-card > img,
 .placeholder-image {
 
     height: 220px;
 
 }
 
+.news-card > img {
+
+    transition: transform .5s ease;
+
+}
+
+.news-card:hover > img {
+
+    transform: scale(1.03);
+
+}
+
 .placeholder-image {
 
-    background: var(--maroon);
+    background: var(--green);
 
     display: flex;
 
@@ -566,11 +642,13 @@ a {
 
     justify-content: center;
 
-    color: white;
+    color: var(--white);
 
     font-family: "Playfair Display", serif;
 
     font-size: 50px;
+
+    border-bottom: 5px solid var(--orange);
 
 }
 
@@ -601,13 +679,13 @@ a {
 }
 
 
-/* =========================================
+/* ==================================================
    FEATURE
-========================================= */
+================================================== */
 
 .feature-section {
 
-    background: var(--cream);
+    background: var(--green-light);
 
     padding: 100px 0;
 
@@ -625,9 +703,23 @@ a {
 
 }
 
+.feature-image {
+
+    overflow: hidden;
+
+}
+
 .feature-image img {
 
     height: 500px;
+
+    transition: transform .5s ease;
+
+}
+
+.feature-image:hover img {
+
+    transform: scale(1.03);
 
 }
 
@@ -659,9 +751,9 @@ a {
 
     margin-top: 15px;
 
-    background: var(--maroon);
+    background: var(--green);
 
-    color: white;
+    color: var(--white);
 
     padding: 14px 22px;
 
@@ -671,12 +763,20 @@ a {
 
     font-weight: 700;
 
+    transition: .3s;
+
+}
+
+.dark-button:hover {
+
+    background: var(--orange);
+
 }
 
 
-/* =========================================
+/* ==================================================
    CATEGORY GRID
-========================================= */
+================================================== */
 
 .category-grid {
 
@@ -706,9 +806,9 @@ a {
 
 .category-card:hover {
 
-    background: var(--maroon);
+    background: var(--green);
 
-    color: white;
+    color: var(--white);
 
 }
 
@@ -716,7 +816,7 @@ a {
 
     font-size: 10px;
 
-    color: var(--gold);
+    color: var(--orange);
 
 }
 
@@ -740,20 +840,20 @@ a {
 
 .category-card:hover p {
 
-    color: #ddd;
+    color: #eeeeee;
 
 }
 
 
-/* =========================================
+/* ==================================================
    NEWSLETTER
-========================================= */
+================================================== */
 
 .newsletter {
 
-    background: var(--maroon-dark);
+    background: var(--green-dark);
 
-    color: white;
+    color: var(--white);
 
     padding: 70px 0;
 
@@ -773,7 +873,7 @@ a {
 
 .newsletter .section-label {
 
-    color: var(--gold);
+    color: var(--orange);
 
 }
 
@@ -811,8 +911,6 @@ a {
 
     padding: 15px;
 
-    font-family: inherit;
-
     outline: none;
 
 }
@@ -821,9 +919,9 @@ a {
 
     border: none;
 
-    background: var(--gold);
+    background: var(--orange);
 
-    color: white;
+    color: var(--white);
 
     padding: 0 20px;
 
@@ -835,18 +933,26 @@ a {
 
     cursor: pointer;
 
+    transition: .3s;
+
+}
+
+.newsletter button:hover {
+
+    background: #f58a35;
+
 }
 
 
-/* =========================================
+/* ==================================================
    FOOTER
-========================================= */
+================================================== */
 
 footer {
 
-    background: #111;
+    background: #111111;
 
-    color: white;
+    color: var(--white);
 
     padding: 65px 0 20px;
 
@@ -876,7 +982,7 @@ footer {
 
     max-width: 350px;
 
-    color: #999;
+    color: #999999;
 
     font-size: 13px;
 
@@ -886,7 +992,7 @@ footer {
 
 .footer-grid h3 {
 
-    color: var(--gold);
+    color: var(--orange);
 
     font-size: 9px;
 
@@ -900,23 +1006,25 @@ footer {
 
     display: block;
 
-    color: #aaa;
+    color: #aaaaaa;
 
     font-size: 12px;
 
     margin-bottom: 10px;
 
+    transition: .2s;
+
 }
 
 .footer-grid a:hover {
 
-    color: white;
+    color: var(--white);
 
 }
 
 .footer-bottom {
 
-    border-top: 1px solid #333;
+    border-top: 1px solid #333333;
 
     padding-top: 20px;
 
@@ -924,18 +1032,19 @@ footer {
 
     justify-content: space-between;
 
-    color: #777;
+    color: #777777;
 
     font-size: 10px;
 
 }
 
 
-/* =========================================
-   MOBILE
-========================================= */
+/* ==================================================
+   TABLET
+================================================== */
 
 @media (max-width: 850px) {
+
 
     .top-content {
 
@@ -943,17 +1052,20 @@ footer {
 
     }
 
+
     .header-content {
 
         min-height: 80px;
 
     }
 
-    .brand h1 {
 
-        font-size: 25px;
+    .brand-text h1 {
+
+        font-size: 27px;
 
     }
+
 
     .brand-mark {
 
@@ -961,21 +1073,17 @@ footer {
 
         height: 45px;
 
+        font-size: 18px;
+
     }
+
 
     .menu-button {
 
         display: block;
 
-        background: none;
-
-        border: none;
-
-        font-size: 25px;
-
-        cursor: pointer;
-
     }
+
 
     .navigation {
 
@@ -983,11 +1091,13 @@ footer {
 
     }
 
+
     .navigation.active {
 
         display: block;
 
     }
+
 
     .nav-content {
 
@@ -999,13 +1109,15 @@ footer {
 
     }
 
+
     .nav-content a {
 
-        padding: 12px 0;
+        padding: 13px 0;
 
         border-bottom: 1px solid var(--light-gray);
 
     }
+
 
     .hero-grid {
 
@@ -1013,17 +1125,20 @@ footer {
 
     }
 
+
     .hero-image {
 
         height: 350px;
 
     }
 
+
     .news-grid {
 
         grid-template-columns: 1fr;
 
     }
+
 
     .feature-grid {
 
@@ -1033,17 +1148,20 @@ footer {
 
     }
 
+
     .feature-image img {
 
         height: 350px;
 
     }
 
+
     .category-grid {
 
         grid-template-columns: 1fr 1fr;
 
     }
+
 
     .newsletter-content {
 
@@ -1053,11 +1171,13 @@ footer {
 
     }
 
+
     .newsletter form {
 
         min-width: 0;
 
     }
+
 
     .footer-grid {
 
@@ -1066,6 +1186,7 @@ footer {
         gap: 35px;
 
     }
+
 
     .footer-bottom {
 
@@ -1077,7 +1198,20 @@ footer {
 
 }
 
+
+/* ==================================================
+   MOBILE
+================================================== */
+
 @media (max-width: 500px) {
+
+
+    .hero {
+
+        padding: 35px 0;
+
+    }
+
 
     .hero-content h2 {
 
@@ -1085,15 +1219,17 @@ footer {
 
     }
 
-    .section-header h2 {
 
-        font-size: 32px;
+    .section {
+
+        padding: 55px 0;
 
     }
 
+
     .section-header {
 
-        align-items: start;
+        align-items: flex-start;
 
         flex-direction: column;
 
@@ -1101,11 +1237,20 @@ footer {
 
     }
 
+
+    .section-header h2 {
+
+        font-size: 32px;
+
+    }
+
+
     .side-story {
 
         grid-template-columns: 100px 1fr;
 
     }
+
 
     .side-story img {
 
@@ -1113,11 +1258,13 @@ footer {
 
     }
 
+
     .side-story h3 {
 
         font-size: 16px;
 
     }
+
 
     .category-grid {
 
@@ -1125,17 +1272,34 @@ footer {
 
     }
 
+
+    .newsletter {
+
+        padding: 55px 0;
+
+    }
+
+
+    .newsletter h2 {
+
+        font-size: 38px;
+
+    }
+
+
     .newsletter form {
 
         flex-direction: column;
 
     }
 
+
     .newsletter input {
 
         min-height: 45px;
 
     }
+
 
     .newsletter button {
 
